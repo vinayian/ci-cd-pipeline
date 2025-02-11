@@ -13,7 +13,8 @@ jobs:
         run: docker build -t vinay469/my-ci-cd-app .  
 
       - name: Log in to Docker Hub  
-        run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin  
+       run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+
 
       - name: Push Docker image to Docker Hub  
         run: docker push vinay469/my-ci-cd-app:latest  
